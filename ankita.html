@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Very Important Question for Ankita 💍</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        animation: slideIn 0.8s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .ring-animation {
+        font-size: 80px;
+        margin-bottom: 20px;
+        display: inline-block;
+        animation:
+          spin 2s linear infinite,
+          float 3s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotateZ(0deg);
+        }
+        to {
+          transform: rotateZ(360deg);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      h1 {
+        color: #667eea;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        word-break: break-word;
+      }
+
+      .subtitle {
+        color: #999;
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+
+      .message-section {
+        background: #f8f9ff;
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        border-left: 5px solid #667eea;
+      }
+
+      .message-section p {
+        color: #333;
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .funny-reasons {
+        text-align: left;
+        margin: 20px 0;
+      }
+
+      .funny-reasons li {
+        list-style: none;
+        margin: 10px 0;
+        padding-left: 30px;
+        position: relative;
+        color: #555;
+        font-size: 1em;
+      }
+
+      .funny-reasons li:before {
+        content: "💕";
+        position: absolute;
+        left: 0;
+      }
+
+      .button-section {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .btn {
+        padding: 15px 40px;
+        font-size: 1.1em;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .btn-yes {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        flex: 1;
+        min-width: 150px;
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn-yes:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+      }
+
+      .btn-no {
+        background: #ddd;
+        color: #666;
+        flex: 1;
+        min-width: 150px;
+        position: fixed;
+        transition: all 0.2s ease;
+      }
+
+      .btn-no:hover {
+        background: #ccc;
+      }
+
+      .celebration {
+        display: none;
+        text-align: center;
+        animation: celebration 1s ease-out;
+      }
+
+      @keyframes celebration {
+        0% {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .celebration h2 {
+        font-size: 2.5em;
+        color: #667eea;
+        margin-bottom: 20px;
+        animation: bounce 1s ease infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        pointer-events: none;
+      }
+
+      .hearts {
+        font-size: 3em;
+        margin: 20px 0;
+        animation: heartBeat 1s ease infinite;
+      }
+
+      @keyframes heartBeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      .countdown {
+        font-size: 0.9em;
+        color: #999;
+        margin-top: 20px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 30px 20px;
+        }
+
+        h1 {
+          font-size: 1.8em;
+        }
+
+        .ring-animation {
+          font-size: 60px;
+        }
+
+        .subtitle {
+          font-size: 1em;
+        }
+
+        .button-section {
+          gap: 15px;
+        }
+
+        .btn {
+          padding: 12px 30px;
+          font-size: 0.95em;
+          min-width: 120px;
+        }
+
+        .message-section p {
+          font-size: 0.95em;
+        }
+
+        .funny-reasons li {
+          font-size: 0.9em;
+          padding-left: 25px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .container {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 1.5em;
+        }
+
+        .ring-animation {
+          font-size: 50px;
+        }
+
+        .button-section {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .message-section {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="proposal-content">
+        <div class="ring-animation">💍</div>
+        <h1>Hey Ankita!</h1>
+        <p class="subtitle">I have a very important question...</p>
+
+        <div class="message-section">
+          <p>So, I've been thinking... and I realized that:</p>
+          <ul class="funny-reasons">
+            <li>You're the only one who laughs at my terrible jokes</li>
+            <li>You tolerate my weird habits (and there are MANY)</li>
+            <li>You make terrible decisions WITH me (best quality)</li>
+            <li>I can't imagine my future without you annoying me daily</li>
+            <li>
+              You haven't left me yet, so... marry me before you realize you
+              can?
+            </li>
+          </ul>
+        </div>
+
+        <p style="color: #667eea; font-size: 1.3em; margin: 25px 0">
+          <strong>Will you marry me?</strong>
+        </p>
+
+        <div class="button-section">
+          <button class="btn btn-yes" onclick="celebrateYes()">YES! 🎉</button>
+          <button
+            class="btn btn-no"
+            id="no-btn"
+            onclick="moveButton()"
+            onmouseenter="moveButton()"
+            ontouchstart="moveButton()"
+          >
+            No Thanks
+          </button>
+        </div>
+
+        <p class="countdown">
+          <em
+            >P.S. - The "No" button runs away. It's basically me telling you
+            that there's no escape. 😏</em
+          >
+        </p>
+      </div>
+
+      <div id="celebration" class="celebration">
+        <h2>🎊 YES! YES! YES! 🎊</h2>
+        <div class="hearts">❤️ 💜 💙</div>
+        <p style="font-size: 1.3em; color: #555; margin: 20px 0">
+          I KNEW YOU'D SAY YES!<br /><br />
+          Can't wait to annoy you for the rest of our lives! 💍✨
+        </p>
+        <p style="color: #999; margin-top: 20px; font-size: 0.95em">
+          Now go show your friends this beautiful moment! 📱<br />
+          (Or if you're shy, at least take a screenshot for the memories 😄)
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function moveButton() {
+        const btn = document.getElementById("no-btn");
+
+        // Generate random position within viewport
+        const randomX = Math.random() * (window.innerWidth - 150);
+        const randomY = Math.random() * (window.innerHeight - 50);
+
+        btn.style.left = randomX + "px";
+        btn.style.top = randomY + "px";
+
+        // Add a funny message
+        const messages = [
+          "You can't escape! 😏",
+          "I'm too fast! 🏃",
+          "Nice try! 😄",
+          "Did you really think it would be that easy?",
+          "I'm everywhere! 👻",
+          "Nope, not happening! 💪",
+        ];
+
+        const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+        console.log(randomMsg);
+      }
+
+      function celebrateYes() {
+        const content = document.getElementById("proposal-content");
+        const celebration = document.getElementById("celebration");
+
+        content.style.display = "none";
+        celebration.style.display = "block";
+
+        // Create confetti
+        createConfetti();
+
+        // Play celebration
+        playSound();
+      }
+
+      function createConfetti() {
+        const colors = ["#667eea", "#764ba2", "#ff6b9d", "#ffd93d", "#6bcf7f"];
+        const emojis = ["💍", "💕", "🎉", "✨", "💜"];
+
+        for (let i = 0; i < 50; i++) {
+          setTimeout(() => {
+            const confetti = document.createElement("div");
+            confetti.className = "confetti";
+            confetti.style.left = Math.random() * 100 + "%";
+            confetti.style.backgroundColor =
+              colors[Math.floor(Math.random() * colors.length)];
+            confetti.textContent =
+              emojis[Math.floor(Math.random() * emojis.length)];
+            confetti.style.fontSize = "2em";
+            confetti.style.animation = `fall ${2 + Math.random() * 1}s linear`;
+
+            document.body.appendChild(confetti);
+
+            setTimeout(() => confetti.remove(), 3000);
+          }, i * 30);
+        }
+      }
+
+      function playSound() {
+        // Create a simple beep sound using Web Audio API
+        try {
+          const audioContext = new (
+            window.AudioContext || window.webkitAudioContext
+          )();
+          const oscillator = audioContext.createOscillator();
+          const gainNode = audioContext.createGain();
+
+          oscillator.connect(gainNode);
+          gainNode.connect(audioContext.destination);
+
+          oscillator.frequency.value = 800;
+          oscillator.type = "sine";
+
+          gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(
+            0.01,
+            audioContext.currentTime + 0.5,
+          );
+
+          oscillator.start(audioContext.currentTime);
+          oscillator.stop(audioContext.currentTime + 0.5);
+        } catch (e) {
+          // Audio not supported or user hasn't interacted
+        }
+      }
+
+      // Add CSS animation for confetti fall
+      const style = document.createElement("style");
+      style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotateZ(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
